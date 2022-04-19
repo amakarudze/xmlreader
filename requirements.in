@@ -1,0 +1,8 @@
+black
+coverage
+Django==4.0.4
+pip-tools
+pytest
+pytest-django
+pytest-django-dotenv
+python-dotenv
