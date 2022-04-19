@@ -2,6 +2,7 @@ black
 coverage
 Django==4.0.4
 pip-tools
+psycopg2-binary
 pytest
 pytest-django
 pytest-django-dotenv

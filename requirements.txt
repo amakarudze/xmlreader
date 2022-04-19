@@ -36,6 +36,8 @@ platformdirs==2.5.2
     # via black
 pluggy==1.0.0
     # via pytest
+psycopg2-binary==2.9.3
+    # via -r requirements.in
 py==1.11.0
     # via pytest
 pyparsing==3.0.8
