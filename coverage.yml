@@ -8,3 +8,6 @@ ignore:
   - activity_generator/wsgi.py
   - activity_generator/asgi.py
   - manage.py
+
+codecov:
+  token: 1f3d868b-4cb2-4891-9748-792897888ddd
