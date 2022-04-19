@@ -5,5 +5,5 @@ pip-tools
 psycopg2-binary
 pytest
 pytest-django
-pytest-django-dotenv
+pytest-dotenv
 python-dotenv
