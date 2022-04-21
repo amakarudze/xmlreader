@@ -7,5 +7,5 @@ app_name = "xmlreader"
 urlpatterns = [
     path("", views.index, name="index"),
     path("about/", views.about, name="about"),
-    path('results/<int:id>/', views.results, name='results'),
+    path("results/<int:id>/", views.results, name="results"),
 ]

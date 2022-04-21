@@ -6,13 +6,13 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('xmlreader', '0001_initial'),
+        ("xmlreader", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='upload',
-            old_name='filename',
-            new_name='file',
+            model_name="upload",
+            old_name="filename",
+            new_name="file",
         ),
     ]

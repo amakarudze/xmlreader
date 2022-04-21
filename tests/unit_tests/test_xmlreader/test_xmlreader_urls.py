@@ -12,5 +12,5 @@ def test_about_url(client):
 
 
 def test_results_url(client, file):
-    response = client.get(reverse('xmlreader:results', args=(file.pk,)))
+    response = client.get(reverse("xmlreader:results", args=(file.pk,)))
     assert response.status_code == 200

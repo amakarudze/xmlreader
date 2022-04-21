@@ -5,8 +5,8 @@ from .models import Upload
 
 
 class UploadFileForm(forms.ModelForm):
-    class Meta: 
+    class Meta:
         model = Upload
-        fields = ['file']
+        fields = ["file"]
 
-    file = forms.FileField(label=_('Upload File'), allow_empty_file=True)
+    file = forms.FileField(label=_("Upload File"), allow_empty_file=True)
