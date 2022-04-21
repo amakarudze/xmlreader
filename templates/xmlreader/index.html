@@ -39,4 +39,10 @@
         </form>
     </div>
 
+    <hr>
+    <h2>Previously uploaded files</h2>
+    {% for file in files %}
+    <a href="{% url 'xmlreader:results' file.pk %}">{{ file.file }}</a><br>
+    {% endfor %}
+
 {% endblock %}

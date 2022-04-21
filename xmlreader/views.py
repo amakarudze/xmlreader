@@ -9,6 +9,7 @@ from .models import Upload
 
 def index(request):
     title = "Home"
+    files = Upload.objects.all()
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -16,7 +17,9 @@ def index(request):
             return redirect(reverse("xmlreader:results", args=(file.pk,)))
     else:
         form = UploadFileForm()
-    return render(request, "xmlreader/index.html", {"title": title, "form": form})
+    return render(
+        request, "xmlreader/index.html", {"title": title, "form": form, "files": files}
+    )
 
 
 def about(request):
