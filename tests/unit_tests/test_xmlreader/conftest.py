@@ -10,7 +10,7 @@ from xmlreader.models import Upload
 @pytest.fixture
 def file(db):
     return Upload.objects.create(
-        file="google.comdjangogirls.org!1649808000!1649894399 2.xml"
+        file="google.com!djangogirls.org!1649808000!1649894399 2.xml"
     )
 
 

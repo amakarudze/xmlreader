@@ -42,7 +42,10 @@
     <hr>
     <h2>Previously uploaded files</h2>
     {% for file in files %}
-    <a href="{% url 'xmlreader:results' file.pk %}">{{ file.file }}</a><br>
+    <div class="row mb-2">
+        <div class="col-md-10"><a href="{% url 'xmlreader:results' file.pk %}">{{ file.file }}</a><br></div>
+    </div>
+    
     {% endfor %}
 
 {% endblock %}
