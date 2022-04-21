@@ -6,4 +6,3 @@ __pycache__
 .pytest_cache
 .DS_Store
 data.json
-xml_files/
