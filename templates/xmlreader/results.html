@@ -31,12 +31,12 @@
 <div class="row">
   <div class="col-md-2"><h6>Policy Published: </h6></div>
   <div class="col-md-4">
-    domain: {{ data_dict.feedback.policy_published.domain }}<br/>
-    adkim:  {{ data_dict.feedback.policy_published.adkim }}<br/>
-    aspf:   {{ data_dict.feedback.policy_published.aspf }}<br/>
-    p:   {{ data_dict.feedback.policy_published.p }}<br/>
-    sp:   {{ data_dict.feedback.policy_published.sp }}<br/>
-    pct:   {{ data_dict.feedback.policy_published.pct }}<br/>
+    <strong>domain:</strong> {{ data_dict.feedback.policy_published.domain }}<br>
+    <strong>adkim:</strong>  {{ data_dict.feedback.policy_published.adkim }}<br>
+    <strong>aspf:</strong>   {{ data_dict.feedback.policy_published.aspf }}<br>
+    <strong>p:</strong>   {{ data_dict.feedback.policy_published.p }}<br>
+    <strong>sp:</strong>   {{ data_dict.feedback.policy_published.sp }}<br>
+    <strong>pct:</strong>   {{ data_dict.feedback.policy_published.pct }}<br>
     </div>
   <div class="col-md-2"><h6></h6></div>
   <div class="col-md-4"></div>
@@ -47,8 +47,24 @@
 {% for row in data_dict.feedback.record %}
   {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-md-4">
-      {{ row }}
-    
+        <h5>Record</h5>
+        <strong>Source IP:</strong> {{ row.row.source_ip }} <br>
+        <strong>Count:</strong> {{ row.row.count }} <br><br>
+        <h6>Policy evaluated</h6>
+        <strong>disposition:</strong> {{ row.row.policy_evaluated.disposition }}<br>
+        <strong>dkim:</strong> {{ row.row.policy_evaluated.dkim }}<br>
+        <strong>spf: </strong> {{ row.row.policy_evaluated.spf}}<br>
+        <strong>Indentifiers</strong><br/>
+        <strong>header_from:</strong> {{ row.identifiers.header_from }} <br><br>
+        <h6>Auth Results</h6>
+        <strong>dkim:</strong><br>
+        <strong>domain:</strong>  {{ row.auth_results.dkim.domain }} <br>
+        <strong>result:</strong>  {{ row.auth_results.dkim.result }} <br>
+        <strong>selector:</strong>  {{ row.auth_results.dkim.selector }} <br>
+        <strong>spf:</strong><br>
+        <strong>domain:</strong>  {{ row.auth_results.spf.domain }}<br>
+        <strong>result:</strong>  {{ row.auth_results.spf.result }}
+        <hr>
     </div>
     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
     {% if forloop.last %}</div>{% endif %}
