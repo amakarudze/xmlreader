@@ -1,0 +1,57 @@
+{% extends 'xmlreader/base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-10"></div>
+  <div class="col-md-2"><a href="#!" class="btn btn-primary">Download  <i class="fa-solid fa-file-pdf"></i></a></div>
+</div>
+
+<h1>DMARC Report</h1>
+
+<h2>Reporting Organization Details</h2>
+<div class="row">
+  <div class="col-md-2"><h6>Organization: </h6></div>
+  <div class="col-md-4">{{ data_dict.feedback.report_metadata.org_name }}</div>
+  <div class="col-md-2"><h6>Email: </h6></div>
+  <div class="col-md-4">{{ data_dict.feedback.report_metadata.email }}</div>
+</div>
+<div class="row">
+  <div class="col-md-2"><h6>Additional Contact Info: </h6></div>
+  <div class="col-md-4">{{ data_dict.feedback.report_metadata.extra_contact_info }}</div>
+  <div class="col-md-2"><h6>Report ID: </h6></div>
+  <div class="col-md-4">{{ data_dict.feedback.report_metadata.report_id }}</div>
+</div>
+<div class="row">
+  <div class="col-md-2"><h6>Date Range: </h6></div>
+  <div class="col-md-4">{{ data_dict.feedback.report_metadata.date_range.begin }} - {{ data_dict.feedback.report_metadata.date_range.end }}</div>
+  <div class="col-md-2"></div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"><h6>Policy Published: </h6></div>
+  <div class="col-md-4">
+    domain: {{ data_dict.feedback.policy_published.domain }}<br/>
+    adkim:  {{ data_dict.feedback.policy_published.adkim }}<br/>
+    aspf:   {{ data_dict.feedback.policy_published.aspf }}<br/>
+    p:   {{ data_dict.feedback.policy_published.p }}<br/>
+    sp:   {{ data_dict.feedback.policy_published.sp }}<br/>
+    pct:   {{ data_dict.feedback.policy_published.pct }}<br/>
+    </div>
+  <div class="col-md-2"><h6></h6></div>
+  <div class="col-md-4"></div>
+</div>
+
+<h2>Details</h2>
+
+{% for row in data_dict.feedback.record %}
+  {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-md-4">
+      {{ row }}
+    
+    </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+{% endblock %}

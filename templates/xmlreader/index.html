@@ -1,5 +1,42 @@
 {% extends 'xmlreader/base.html' %}
 
 {% block content %}
-    <h1 class="mt-4">Read DMARC Files</h1>    
+    <h1 class="mt-4">Upload DMARC Files to decode</h1>    
+
+    <div class="col-md-8 offset-md-2">
+        <h2>Upload file to convert here</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">{{ field.label }}:</label>
+                    <div class="col-md-8">
+                    {{ field }}
+                    </div>
+                </div>
+
+                {% if form.errors and not form.non_field_errors %}
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error }}</strong>
+                             </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+            {% endfor %}
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <button id="Create" type="submit" class="btn btn-primary">Upload File</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
 {% endblock %}

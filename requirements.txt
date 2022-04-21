@@ -16,6 +16,8 @@ click==8.1.2
     #   pip-tools
 coverage==6.3.2
     # via -r requirements.in
+defusedxml==0.7.1
+    # via -r requirements.in
 django==4.0.4
     # via -r requirements.in
 iniconfig==1.1.1
@@ -28,6 +30,8 @@ pathspec==0.9.0
     # via black
 pep517==0.12.0
     # via pip-tools
+pillow==9.1.0
+    # via -r requirements.in
 pip-tools==6.6.0
     # via -r requirements.in
 platformdirs==2.5.2
@@ -62,6 +66,8 @@ tomli==2.0.1
     #   pytest
 wheel==0.37.1
     # via pip-tools
+xmltodict==0.12.0
+    # via -r requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
