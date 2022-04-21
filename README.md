@@ -18,5 +18,12 @@ DMARC reports are being sent to our `dmarc` email address. Analyzing these email
 * Run `pip install -r requirements.txt` to install required packages.
 * Create a local Postgres database.
 * Run `python manage.py migrate` to run migrations.
+
+## Testing
+To test using automated tests, run:
+
+coverage run -m pytest
+
+## Usage
 * Run `python manage.py runserver` to run the project and open `http://127.0.0.1:8000/`.
 * Upload a DMARC file and yay you're all set!
