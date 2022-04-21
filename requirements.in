@@ -2,7 +2,6 @@ black
 coverage
 defusedxml
 Django==4.0.4
-pdfkit
 Pillow
 pip-tools
 psycopg2-binary
