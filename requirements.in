@@ -3,7 +3,6 @@ coverage
 defusedxml
 Django==4.0.4
 Pillow
-pip-tools
 psycopg2-binary
 pytest
 pytest-django
